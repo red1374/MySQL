@@ -17,4 +17,4 @@ FROM (SELECT count(*) AS qty, to_user_id
     GROUP BY to_user_id
     ORDER BY qty DESC
     LIMIT 1
-) AS T
+) AS T;
