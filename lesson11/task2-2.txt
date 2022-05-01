@@ -1,0 +1,11 @@
+// -- При помощи базы данных Redis решите задачу поиска имени пользователя по электронному адресу
+// -- и наоборот, поиск электронного адреса пользователя по его имени.
+
+// -- Формируем коллекцию пользователей с помощью множества
+SADD users "sergey:sergey@mail.ru" "Anna:anna@gb.com" "Walter Mitty:wm@gmail.com" "Kira:mega_k@users.com"
+
+// -- Поиск e-mail адреса по имени пользователя
+SSCAN users 0 MATCH Kira:*
+
+// -- Поиск имени пользователя по e-mail адресу
+SSCAN users 0 MATCH *:wm@gmail.com
